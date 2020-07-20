@@ -9,16 +9,40 @@ namespace Intermediate6.Tests
     [TestClass()]
     public class MorseCoderTests
     {
+        /// <summary>
+        /// Tests a character conversion in English->Morse direction
+        /// </summary>
         [TestMethod()]
-        public void GetCharAsMorseTest()
+        public void CharToMorseValid()
         {
-            Assert.Fail();
+            Assert.AreEqual("--.", MorseCoder.GetCharAsMorse("G"));
         }
 
+        /// <summary>
+        /// Tests a character conversion in Morse->English direction
+        /// </summary>
         [TestMethod()]
-        public void GetMorseAsCharTest()
+        public void MorseToCharValid()
         {
-            Assert.Fail();
+            Assert.AreEqual("G", MorseCoder.GetMorseAsChar("--."));
+        }
+
+        /// <summary>
+        /// Tests a character conversion in English->Morse direction
+        /// </summary>
+        [TestMethod()]
+        public void CharToMorseInvalid()
+        {
+            Assert.AreEqual(string.Empty, MorseCoder.GetCharAsMorse("sdfg"));
+        }
+
+        /// <summary>
+        /// Tests a character conversion in Morse->English direction
+        /// </summary>
+        [TestMethod()]
+        public void MorseToCharInvalid()
+        {
+            Assert.AreEqual(string.Empty, MorseCoder.GetMorseAsChar("sdf"));
         }
     }
 }

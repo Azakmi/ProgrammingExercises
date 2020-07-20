@@ -11,7 +11,7 @@ namespace Intermediate6
             throw new System.NotImplementedException();
         }
 
-        private bool isInputValid()
+        private bool IsInputValid()
         {
             throw new System.NotImplementedException();
         }

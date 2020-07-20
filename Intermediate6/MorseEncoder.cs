@@ -8,10 +8,21 @@ namespace Intermediate6
     {
         public string EncodeString(string inputString)
         {
-            throw new System.NotImplementedException();
+            if (IsInputValid(inputString))
+            {
+                string result = "";
+
+                //TODO
+
+                return result;
+            }
+            else
+            {
+                return string.Empty;
+            }
         }
 
-        private bool isInputValid()
+        private bool IsInputValid(string inputString)
         {
             throw new System.NotImplementedException();
         }

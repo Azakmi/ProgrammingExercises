@@ -1,8 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Intermediate6;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Intermediate6.Tests
 {
@@ -28,7 +24,7 @@ namespace Intermediate6.Tests
         }
 
         /// <summary>
-        /// Tests a character conversion in English->Morse direction
+        /// Tests an invalid character conversion in English->Morse direction
         /// </summary>
         [TestMethod()]
         public void CharToMorseInvalid()
@@ -37,7 +33,7 @@ namespace Intermediate6.Tests
         }
 
         /// <summary>
-        /// Tests a character conversion in Morse->English direction
+        /// Tests an invalid character conversion in Morse->English direction
         /// </summary>
         [TestMethod()]
         public void MorseToCharInvalid()

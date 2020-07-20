@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Intermediate6
 {
+    /// <summary>
+    /// Base class for MorseEncoder and MorseDecoder, for character level coding and decoding morse data
+    /// </summary>
     public class MorseCoder
     {
+        /// <summary>
+        /// Pre-constructed dictionary containing the ITU standard morse code table.
+        /// </summary>
         static readonly Dictionary<string, string> morseLookupTable = new Dictionary<string, string>()
         {
-            {"A",".-" },
+            {"A", ".-" },
             {"B", "-..." },
             {"C", "-.-." },
             {"D", "-.." },

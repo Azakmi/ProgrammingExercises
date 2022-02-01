@@ -11,7 +11,16 @@ namespace Intermediate6.Tests
         [TestMethod()]
         public void CharToMorseValid()
         {
-            Assert.AreEqual("--.", MorseCoder.GetCharAsMorse("G"));
+            Assert.AreEqual("--.", MorseCoder.GetCharAsMorse('G'));
+        }
+
+        /// <summary>
+        /// Tests a lowercase character conversion in English->Morse direction
+        /// </summary>
+        [TestMethod()]
+        public void CharToMorseValidLowercase()
+        {
+            Assert.AreEqual("--.", MorseCoder.GetCharAsMorse('g'));
         }
 
         /// <summary>
@@ -20,25 +29,27 @@ namespace Intermediate6.Tests
         [TestMethod()]
         public void MorseToCharValid()
         {
-            Assert.AreEqual("G", MorseCoder.GetMorseAsChar("--."));
+            Assert.AreEqual('G', MorseCoder.GetMorseAsChar("--."));
         }
 
         /// <summary>
         /// Tests an invalid character conversion in English->Morse direction
         /// </summary>
         [TestMethod()]
+        [ExpectedException(typeof(System.ArgumentOutOfRangeException))]
         public void CharToMorseInvalid()
         {
-            Assert.AreEqual(string.Empty, MorseCoder.GetCharAsMorse("sdfg"));
+            MorseCoder.GetCharAsMorse('&');
         }
 
         /// <summary>
         /// Tests an invalid character conversion in Morse->English direction
         /// </summary>
         [TestMethod()]
+        [ExpectedException(typeof(System.ArgumentOutOfRangeException))]
         public void MorseToCharInvalid()
         {
-            Assert.AreEqual(string.Empty, MorseCoder.GetMorseAsChar("sdf"));
+             MorseCoder.GetMorseAsChar("&");
         }
     }
 }

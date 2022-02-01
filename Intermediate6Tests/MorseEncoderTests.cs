@@ -10,9 +10,14 @@ namespace Intermediate6.Tests
     public class MorseEncoderTests
     {
         [TestMethod()]
-        public void EncodeStringTest()
+        public void EncodeString1()
         {
-            Assert.Fail();
+            Assert.AreEqual("... --- ...", new MorseEncoder().EncodeString("SOS"));
+        }
+        [TestMethod()]
+        public void EncodeString2()
+        {
+            Assert.AreEqual("- . ... -   ..---", new MorseEncoder().EncodeString("Test 2"));
         }
     }
 }

@@ -3,23 +3,32 @@
   <Class Name="Intermediate6.MorseCoder">
     <Position X="3.75" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MorseCoder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Intermediate6.MorseEncoder">
-    <Position X="3" Y="2.5" Width="1.5" />
+    <Position X="2.25" Y="3" Width="3" />
     <TypeIdentifier>
-      <HashCode>AACAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>MorseEncoder.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Intermediate6.MorseDecoder">
-    <Position X="5.5" Y="2.5" Width="1.5" />
+    <Position X="5.5" Y="3" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>MorseDecoder.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
+  <Interface Name="Intermediate6.InputValidator">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>InputValidator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

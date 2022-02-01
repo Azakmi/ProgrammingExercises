@@ -11,58 +11,77 @@ namespace Intermediate6
         /// <summary>
         /// Pre-constructed dictionary containing the ITU standard morse code table.
         /// </summary>
-        static readonly Dictionary<string, string> morseLookupTable = new Dictionary<string, string>()
+        static readonly Dictionary<char, string> morseLookupTable = new Dictionary<char, string>()
         {
-            {"A", ".-" },
-            {"B", "-..." },
-            {"C", "-.-." },
-            {"D", "-.." },
-            {"E", "." },
-            {"F", "..-." },
-            {"G", "--." },
-            {"H", "...." },
-            {"I", ".." },
-            {"J", ".---" },
-            {"K", "-.-" },
-            {"L", ".-.." },
-            {"M", "--" },
-            {"N", "-." },
-            {"O", "---" },
-            {"P", ".--." },
-            {"Q", "--.-" },
-            {"R", ".-." },
-            {"S", "..." },
-            {"T", "-" },
-            {"U", "..-" },
-            {"V", "...-" },
-            {"W", ".--" },
-            {"X", "-..-" },
-            {"Y", "-.--" },
-            {"Z", "--.." },
-            {"0", "-----" },
-            {"1", ".----" },
-            {"2", "..---" },
-            {"3", "...--" },
-            {"4", "....-" },
-            {"5", "....." },
-            {"6", "-...." },
-            {"7", "--..." },
-            {"8", "---.." },
-            {"9", "----." }
+            {'A', ".-" },
+            {'B', "-..." },
+            {'C', "-.-." },
+            {'D', "-.." },
+            {'E', "." },
+            {'F', "..-." },
+            {'G', "--." },
+            {'H', "...." },
+            {'I', ".." },
+            {'J', ".---" },
+            {'K', "-.-" },
+            {'L', ".-.." },
+            {'M', "--" },
+            {'N', "-." },
+            {'O', "---" },
+            {'P', ".--." },
+            {'Q', "--.-" },
+            {'R', ".-." },
+            {'S', "..." },
+            {'T', "-" },
+            {'U', "..-" },
+            {'V', "...-" },
+            {'W', ".--" },
+            {'X', "-..-" },
+            {'Y', "-.--" },
+            {'Z', "--.." },
+            {'0', "-----" },
+            {'1', ".----" },
+            {'2', "..---" },
+            {'3', "...--" },
+            {'4', "....-" },
+            {'5', "....." },
+            {'6', "-...." },
+            {'7', "--..." },
+            {'8', "---.." },
+            {'9', "----." },
+            {' ', " " }
         };
 
         /// <summary>
         /// Returns Morse representation of passed input character
         /// </summary>
         /// <param name="inputChar">Character to be converterd to Morse</param>
-        public static string GetCharAsMorse(string inputChar) =>
-            morseLookupTable.ContainsKey(inputChar) ? morseLookupTable.FirstOrDefault(x => x.Key == inputChar).Value : string.Empty;
+        public static string GetCharAsMorse(char inputChar)
+        {
+            if (morseLookupTable.ContainsKey(char.ToUpperInvariant(inputChar)))
+            {
+                return morseLookupTable.First(x => x.Key == char.ToUpperInvariant(inputChar)).Value;
+            }
+            else
+            {
+                throw new System.ArgumentOutOfRangeException("inputChar", "Passed character not in decoding table");
+            }
+        }
 
         /// <summary>
         /// Decodes Morse representation to character
         /// </summary>
         /// <param name="inputMorse">Morse string to be decoded</param>
-        public static string GetMorseAsChar(string inputMorse) =>
-            morseLookupTable.ContainsValue(inputMorse) ? morseLookupTable.FirstOrDefault(x => x.Value == inputMorse).Key : string.Empty;
+        public static char GetMorseAsChar(string inputMorse)
+        {
+            if (morseLookupTable.ContainsValue(inputMorse))
+            {
+                return morseLookupTable.FirstOrDefault(x => x.Value == inputMorse).Key;
+            }
+            else
+            {
+                throw new System.ArgumentOutOfRangeException("inputMorse", "Passed input not valid morse");
+            }
+        }
     }
 }

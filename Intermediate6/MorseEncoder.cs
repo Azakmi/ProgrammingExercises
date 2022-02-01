@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Intermediate6
 {
-    public class MorseEncoder: MorseCoder
+    public class MorseEncoder : MorseCoder, InputValidator
     {
         public string EncodeString(string inputString)
         {
             if (IsInputValid(inputString))
             {
-                string result = "";
+                StringBuilder sb = new StringBuilder();
 
-                //TODO
+                foreach (char c in inputString)
+                { sb.Append(GetCharAsMorse(c) + " "); }
+                sb.Remove(sb.Length - 1, 1);
 
-                return result;
+                return sb.ToString();
             }
             else
             {
@@ -22,9 +25,10 @@ namespace Intermediate6
             }
         }
 
-        private bool IsInputValid(string inputString)
+        public bool IsInputValid(string inputString)
         {
-            throw new System.NotImplementedException();
+            return new Regex($"^[a-zA-Z0-9 ]*$").IsMatch(inputString);
         }
+
     }
 }
